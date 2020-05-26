@@ -19,7 +19,13 @@ const UserSchema=new mongoose.Schema({
     imageId:{
         type:String,
         default:null
-    }
+    },
+    task:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Task"
+        }
+    ]
 })
 
 module.exports=mongoose.model("User",UserSchema);

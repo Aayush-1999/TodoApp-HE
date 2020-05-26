@@ -14,10 +14,6 @@ const taskSchema = mongoose.Schema({
     archive:{
         type:Boolean,
         default : false
-    },
-    author:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"User"
     }
 })
 
