@@ -2,9 +2,8 @@ const express               = require("express"),
       app                   = express(),
       cors                  = require("cors"),
       bodyParser            = require("body-parser"),
-      mongoose              = require("mongoose"),
-      methodOverride        = require("method-override");
-      middleware            = require("./middlwares/index");
+      mongoose              = require("mongoose");
+    //   middleware            = require("./middlwares/index");
 
 require("dotenv").config();
 
@@ -20,9 +19,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.set("view engine","ejs");
-app.use(methodOverride("_method"));
 
-middleware(app);
+// middleware(app);
 
 app.use("/",indexRoute);
 // app.use("/note",noteRoute);
