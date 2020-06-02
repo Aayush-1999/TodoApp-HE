@@ -30,10 +30,10 @@ function Header(props) {
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      getContentAnchorEl={null}
+      transformOrigin={{ vertical: 'top', horizontal: 'center' }}
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
@@ -50,9 +50,8 @@ function Header(props) {
           >
             <MenuIcon />
           </IconButton>
-          <img src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png" alt="keep_logo" className={classes.keepLogo} />
           <Typography className={classes.title} variant="h6" noWrap>
-            Keep
+            ToDo
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -79,9 +78,9 @@ function Header(props) {
             >
               <AccountCircle />
             </IconButton>
-          </div>
+          </div>  
+          {renderMenu}
         </Toolbar>
-        {renderMenu}
       </AppBar>
     );
 }
